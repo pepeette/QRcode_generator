@@ -10,26 +10,21 @@ from qrcode.image.styles.moduledrawers import CircleModuleDrawer
 from  qrcode.image.styles.colormasks import SolidFillColorMask
 from PIL import Image, ImageDraw
 
-# taking url or text
-url = 'https://www.linkedin.com/in/laetitiahoquetis'
+url = input("Enter the URL you want to encode into QR code: ")
+logo = input("Enter the path or filename of the logo you want to embed: ")
 
-#instantiate library
 qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_H,box_size=10,
     border=4)
 qr.add_data(url)
-
-#define the corners, called eyes
 qr_eyes_img = qr.make_image(image_factory=StyledPilImage,
                             eye_drawer=RoundedModuleDrawer(radius_ratio=1.2),
                             color_mask=SolidFillColorMask(back_color=(255, 255, 255), front_color=(242, 106, 73)))
 
-#define logo inside
 qr_img = qr.make_image(image_factory=StyledPilImage,
                        module_drawer=CircleModuleDrawer(),
                        color_mask=SolidFillColorMask(front_color=(2, 175, 185)),
                        embeded_image_path="logo.png")
 
-#define eyes
 def style_eyes(img):
     img_size = img.size[0]
     eye_size = 70 #default
@@ -44,4 +39,5 @@ def style_eyes(img):
 
 mask = style_eyes(qr_img)
 final_img = Image.composite(qr_eyes_img, qr_img, mask)
+
 final_img.save('QR.png')
