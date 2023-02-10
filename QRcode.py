@@ -23,7 +23,7 @@ qr_eyes_img = qr.make_image(image_factory=StyledPilImage,
 qr_img = qr.make_image(image_factory=StyledPilImage,
                        module_drawer=CircleModuleDrawer(),
                        color_mask=SolidFillColorMask(front_color=(2, 175, 185)),
-                       embeded_image_path="logo.png")
+                       embeded_image_path=logo)
 
 def style_eyes(img):
     img_size = img.size[0]
