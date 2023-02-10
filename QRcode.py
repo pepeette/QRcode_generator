@@ -9,6 +9,11 @@ from qrcode.image.styles.moduledrawers import RoundedModuleDrawer
 from qrcode.image.styles.moduledrawers import CircleModuleDrawer
 from  qrcode.image.styles.colormasks import SolidFillColorMask
 from PIL import Image, ImageDraw
+from qrcode.image.pil import PilImage
+from qrcode.image.styledpil import StyledPilImage
+from qrcode.image.styles.moduledrawers.pil import RoundedModuleDrawer
+from qrcode.image.styles.colormasks import RadialGradiantColorMask
+
 
 url = input("Enter the URL you want to encode into QR code: ")
 logo = input("Enter the path or filename of the logo you want to embed: ")
@@ -16,13 +21,15 @@ logo = input("Enter the path or filename of the logo you want to embed: ")
 qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_H,box_size=10,
     border=4)
 qr.add_data(url)
+
+
 qr_eyes_img = qr.make_image(image_factory=StyledPilImage,
                             eye_drawer=RoundedModuleDrawer(radius_ratio=1.2),
-                            color_mask=SolidFillColorMask(back_color=(255, 255, 255), front_color=(242, 106, 73)))
+                            color_mask=SolidFillColorMask(back_color=(255, 255, 255), front_color=(216, 170, 0)))
 
 qr_img = qr.make_image(image_factory=StyledPilImage,
                        module_drawer=CircleModuleDrawer(),
-                       color_mask=SolidFillColorMask(front_color=(2, 175, 185)),
+                       color_mask=SolidFillColorMask(front_color=(46, 8, 5)),
                        embeded_image_path=logo)
 
 def style_eyes(img):
