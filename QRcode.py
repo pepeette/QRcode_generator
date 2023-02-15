@@ -28,7 +28,7 @@ qr_eyes_img = qr.make_image(image_factory=StyledPilImage,
                             color_mask=SolidFillColorMask(back_color=(255, 255, 255), front_color=(216, 170, 0)))
 
 qr_img = qr.make_image(image_factory=StyledPilImage,
-                       module_drawer=CircleModuleDrawer(),
+                       module_drawer=RoundedModuleDrawer(),
                        color_mask=SolidFillColorMask(front_color=(46, 8, 5)),
                        embeded_image_path=logo)
 
