@@ -1,0 +1,5 @@
+pip install flask
+pip install pillow
+pip install qrcode
+pip install "qrcode[pil]"
+pip install qrcode-xcolor
