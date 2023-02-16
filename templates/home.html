@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate QR Code</title>
+</head>
+<body>
+    <h1>Generate QR Code</h1>
+    <form action="/qrcode" method="post">
+        <label for="url">URL:</label>
+        <input type="text" name="url" id="url" required>
+        <br>
+        <label for="logo">Logo:</label>
+        <input type="text" name="logo" id="logo" required>
+        <br>
+        <input type="submit" value="Generate QR Code">
+    </form>
+</body>
+</html>
