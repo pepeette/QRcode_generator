@@ -4,15 +4,12 @@
     <title>Generate QR Code</title>
 </head>
 <body>
-    <h1>Generate QR Code</h1>
-    <form action="/qrcode" method="post">
-        <label for="url">URL:</label>
-        <input type="text" name="url" id="url" required>
-        <br>
-        <label for="logo">Logo:</label>
-        <input type="text" name="logo" id="logo" required>
-        <br>
-        <input type="submit" value="Generate QR Code">
+    <form action="/generate" method="POST">
+        <label for="url">URL:</label><br>
+        <input type="text" id="url" name="url"><br><br>
+        <label for="logo">Logo:</label><br>
+        <input type="text" id="logo" name="logo"><br><br>
+        <input type="submit" value="Generate">
     </form>
 </body>
 </html>
