@@ -1,5 +1,5 @@
-pip install flask
-pip install pillow
-pip install qrcode
-pip install "qrcode[pil]"
-pip install qrcode-xcolor
+Pillow
+qrcode
+qrcode[pil]
+qrcode-xcolor
+https://github.com/lincolnloop/python-qrcode/tree/main/qrcode
